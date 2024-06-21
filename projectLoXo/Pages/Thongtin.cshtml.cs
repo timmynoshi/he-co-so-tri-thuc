@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 using System.Data;
+using System.Reflection.PortableExecutable;
 
 namespace projectLoXo.Pages
 {
@@ -37,9 +38,13 @@ namespace projectLoXo.Pages
                     Diachi = reader.GetString(2);
                     SDT = reader.GetString(3);
                 }
-
                 reader.Close();
+
             }
+            NguoiDung.MatKhau = Matkhau;
+            NguoiDung.HoTen = Hoten;
+            NguoiDung.DiaChi = Diachi;
+            NguoiDung.SDT = SDT;
         }
 
         public IActionResult OnPost()
