@@ -1,0 +1,208 @@
+﻿@page
+@model IndexModel
+@{
+    
+}
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/intro.js/introjs.css">
+    <style>
+        body {
+            background-color: #fff;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        .chatbox {
+            height: 500px;
+            overflow-y: auto;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+        }
+
+            .chat-message.user .message-content {
+                background-color: rgb(58, 73, 78);
+                text-align: right;
+                color: #FFFFF1;
+                border-radius: 15px 15px 15px 15px;
+                font-size: 20px;
+            }
+
+            .chat-message.bot .message-content {
+                background-color: #4c956d;
+                text-align: left;
+                color: #FFFFF1;
+                border-radius: 15px 15px 15px 15px;
+                font-size: 20px;
+            }
+
+        .message-content {
+            display: inline-block;
+            padding: 10px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .fraction {
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+            .fraction > .numerator {
+                display: block;
+            }
+
+            .fraction > .denominator {
+                display: block;
+                border-top: 1px solid #000;
+            }
+
+        .chat-input {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group input {
+            border-radius: 20px;
+            padding: 10px 15px;
+            border: 1px solid #ced4da;
+        }
+
+        .btn-success {
+            width: 300px;
+            padding: 10px 30px;
+            border-radius: 20px;
+        }
+
+
+        .bi-camera {
+            font-size: 2rem;
+            cursor: pointer;
+            color: #00c851;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+            .form-container hr {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+        .chat-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0px;
+            color: #343a40;
+        }
+
+        .help-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #00c851;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .fraction {
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            margin: 0 2px;
+        }
+
+            .fraction > .numerator {
+                display: block;
+            }
+
+            .fraction > .denominator {
+                display: block;
+                border-top: 1px solid #000;
+            }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container mt-5">
+            <div class="form-container">
+                <form id="chat-form" method="post">
+                    <div class="chatbox" id="chatbox">
+                        <!-- Bot response will be displayed here -->
+
+                        <div style="text-align:right;display: flex;justify-content: right;" class="chat-message user">
+
+                            <div style="text-align:left" class="message-content">
+
+<pre>
+Gia thuyet: I=2.4 , R = 5 , t = 300
+Ket luan: Q
+
+</pre>
+                            </div>
+                            <div><img src="~/images/lion.png" style="width: 50px;margin-left: 10px;"></div>
+                        </div>
+
+                        <!-- User response will be displayed here -->
+                        <div class="chat-message bot " style="text-align:right;display: flex;justify-content: left;">
+                            <div><img src="~/images/robot.png" style="width: 50px;margin-right: 10px;"></div>
+                            <div class="message-content">
+<pre>
+Buoc : 1
+Từ tập yếu tố: R, I, t
+Ta ap dung cong thuc: Q = R* I2*t
+Ta suy ra duoc: Q = 8640.
+</pre>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group mt-4">
+                        <div class="row chat-input">
+                            <div class="col-md-12">
+                                <input data-intro="Điền giả thiết của bài toán vào đây!" id="user-inputGT" name="GIATHIET_H" class="form-control" type="text" required placeholder="Nhập vào giả thiết">
+                            </div>
+                            <div class="col-md-11">
+                                <input data-intro="Điền kết luận mà bạn muốn tính vào đây!" id="user-inputKL" name="KETLUAN_G" class="form-control" type="text" required placeholder="Nhập vào kết luận" style="margin-top: 12px;">
+                            </div>
+                            <div class="col-md-1" style="display: flex;justify-content: right;margin-top: 14px;">
+                                <button data-intro="Click vào đây để nhận kết quả giải bài tập" id="send-button" class="btn btn-success" type="submit" style="width: 100px;">Gửi</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
+    
+</body>
+
+

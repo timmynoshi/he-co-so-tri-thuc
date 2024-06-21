@@ -1,0 +1,31 @@
+﻿@page
+@model projectLoXo.Pages.LoginModel
+@{
+}
+
+<div class="container ">
+    <div class="container ">
+        <h1 align="center" style="margin-top: 40px;">ĐĂNG NHẬP</h1>
+    </div>
+    <div class="div-login ">
+
+        <form class="row g-3" method="post">
+            <div class="col-sm-12">
+                <label for="inputTendangnhap" class="form-label">Tên đăng nhập</label>
+                <input type="text" class="form-control" id="Tendangnhap" name="Tendangnhap">
+            </div>
+            <div class="col-sm-12">
+                <label for="inputMatkhau" class="form-label">Mật khẩu</label>
+                <input type="password" class="form-control" id="Matkhau" name="Matkhau">
+            </div>
+
+            <div class="col-sm-6" align="center">
+                <button type="submit" class="btn btn-success">Đăng nhập</button>
+            </div>
+            <div class="col-sm-6" align="center">
+                <button class="btn btn-warning" id="btndangky">Đăng ký</button>
+            </div>
+        </form>
+    </div>
+
+</div>
