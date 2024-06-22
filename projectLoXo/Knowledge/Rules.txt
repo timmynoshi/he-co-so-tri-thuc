@@ -1,1 +1,22 @@
-hello
+begin_rules
+
+
+	begin_rule
+		begin_hypothesis
+			PHUONG = "NGANG"
+		end_hypothesis
+		begin_goals
+			delta_l = 0
+		end_goals
+	end_rule 
+
+
+	begin_rule 
+		begin_hypothesis
+			PHUONG = "THANG_DUNG"
+		end_hypothesis
+		begin_goals
+			delta_l = m*g/k
+		end_goals
+	end_rule 
+end_rules
