@@ -7,7 +7,7 @@ namespace projectLoXo.Pages
     {
         private readonly IWebHostEnvironment _environment;
 
-        public KnowledgeManagementModel(IWebHostEnvironment environment)
+        public SuatrithucModel(IWebHostEnvironment environment)
         {
             _environment = environment;
         }
