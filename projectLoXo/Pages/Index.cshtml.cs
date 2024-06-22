@@ -174,8 +174,8 @@ namespace projectLoXo.Pages
             string ResultPath = Path.Combine(_webHostEnvironment.ContentRootPath, "Solved", filename + "_ketqua.html").Replace(@"\", @"/");
             string DataPath = Path.Combine(_webHostEnvironment.ContentRootPath, "Data", filename + "_debai.txt").Replace(@"\", @"/");
             string BatPath = Path.Combine(_webHostEnvironment.ContentRootPath, "BatFiles", filename + "_bat.bat").Replace(@"\", @"/");
-            string H1 = H;
-            string G1 = G;
+            string H1 = ProcessKetQuaXuLy(H);
+            string G1 = ProcessKetQuaXuLy(G);
             CreateFileData(KnowledgePath, DataPath, H1, G1, ResultPath, f1, f2, f3);
             CreateFileBat(BatPath, DataPath);
             GoToConnectToMaple(BatPath);
@@ -196,7 +196,7 @@ namespace projectLoXo.Pages
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@TenDangNhap", User.Identity.Name);
-                        command.Parameters.AddWithValue("@TruyVanCauHoi", "Gia Thiet : " + H + " \n Ket Luan : " + G);
+                        command.Parameters.AddWithValue("@TruyVanCauHoi", "Giả thiết: " + H + " \n Kết luận: " + G);
                         command.Parameters.AddWithValue("@TruyVanTraLoi", KetQuaXuLy);
                         command.Parameters.AddWithValue("@ThoiGian", formattedDate);
 

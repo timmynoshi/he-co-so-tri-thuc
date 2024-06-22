@@ -6,20 +6,21 @@ begin_rules
 			PHUONG = "NGANG"
 		end_hypothesis
 		begin_goals
-			delta_l = 0
+			delta = 0
+			Wt = Wd
 		end_goals
 	end_rule 
 
 
 	begin_rule 
 		begin_hypothesis
-			PHUONG = "THANG_DUNG"
+			PHUONG = "THANGDUNG"
 		end_hypothesis
 		begin_goals
-			delta_l = m * g / k
-			w = sqrt(g / delta_l)
-			T = 2 * 3.14 * sqrt(delta_l / g)
-			f1 = (1 / (2 * 3.14)) * sqrt(g / delta_l)
+			delta = m * g / k
+			w = (g / delta)
+			T = 2 * 3.14 * (delta / g)
+			z = (g / delta)
 		end_goals
 	end_rule 
 end_rules

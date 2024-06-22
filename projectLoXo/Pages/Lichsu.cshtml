@@ -10,7 +10,7 @@
 <div class="container" style="justify-content: center;">
     <div class="container">
         <h1 align="center" style="margin-top: 40px;">LỊCH SỬ CÂU HỎI</h1>
-        <table class="table table-borderless" style="margin-top: 40px;">
+        <table class="table table-bordered table-striped" style="margin-top: 40px;">
             <thead class="table-success">
                 <tr>
                     <th>Ngày</th>
@@ -22,9 +22,9 @@
                 @for (int i = 0; i < Ngays.Count; i++)
                 {
                     <tr>
-                        <td>@Ngays[i]</td>
-                        <td>@cauHois[i]</td>
-                        <td>@cauTraLois[i]</td>
+                        <td width="200px">@Ngays[i]</td>
+                        <td width="400px">@cauHois[i]</td>
+                        <td>@cauTraLois[i].Replace("<br>", "\n")</td>
                     </tr>
                 }
                 
