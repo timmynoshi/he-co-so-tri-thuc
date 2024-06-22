@@ -13,24 +13,30 @@
         <div class="containe thanhmenu">
         <div class="row" style="align-items: center;">
             <div class="col-sm-4">
-                <div class="dropdown ">
-                    <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="~/images/dropdown.png" class="siuu">
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      
-                      @if(NguoiDung.QuyenHan=="admin")
-                      {
-                            <li><a class="dropdown-item" href="/Index">Giải bài tập</a></li>
-                            <li><a class="dropdown-item" href="#">Lịch sử</a></li>
-                            <li><a class="dropdown-item" href="/Suatrithuc">Sửa tri thức</a></li>
-                      } else {
-                            <li><a class="dropdown-item" href="/Index">Giải bài tập</a></li>
-                            <li><a class="dropdown-item" href="#">Lịch sử</a></li>
-                      }
-                      
-                    </ul>
-                </div>
+                @if(User.Identity.Name!=null)
+                {
+                        <div class="dropdown ">
+                            <button class="btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="~/images/dropdown.png" class="siuu">
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+
+                                @if (NguoiDung.QuyenHan == "admin")
+                                {
+                                    <li><a class="dropdown-item" href="/Index">Giải bài tập</a></li>
+                                    <li><a class="dropdown-item" href="/Lichsu">Lịch sử</a></li>
+                                    <li><a class="dropdown-item" href="/Suatrithuc">Sửa tri thức</a></li>
+                                }
+                                else
+                                {
+                                    <li><a class="dropdown-item" href="/Index">Giải bài tập</a></li>
+                                    <li><a class="dropdown-item" href="/Lichsu">Lịch sử</a></li>
+                                }
+
+                            </ul>
+                        </div>
+                } 
+                
                 
             </div>
             <div class="col-sm-4" style="justify-content: center;display: flex;">

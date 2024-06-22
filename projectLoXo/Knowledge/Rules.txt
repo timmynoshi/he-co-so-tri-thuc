@@ -16,7 +16,10 @@ begin_rules
 			PHUONG = "THANG_DUNG"
 		end_hypothesis
 		begin_goals
-			delta_l = m*g/k
+			delta_l = m * g / k
+			w = sqrt(g / delta_l)
+			T = 2 * 3.14 * sqrt(delta_l / g)
+			f1 = (1 / (2 * 3.14)) * sqrt(g / delta_l)
 		end_goals
 	end_rule 
 end_rules

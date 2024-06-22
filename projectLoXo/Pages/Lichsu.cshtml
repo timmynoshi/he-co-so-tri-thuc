@@ -1,0 +1,35 @@
+﻿@page
+@model projectLoXo.Pages.LichsuModel
+@{
+    var Ngays = LichsuModel.Ngays;
+    var cauHois = LichsuModel.cauHois;
+    var cauTraLois = LichsuModel.cauTraLois;
+
+}
+
+<div class="container" style="justify-content: center;">
+    <div class="container">
+        <h1 align="center" style="margin-top: 40px;">LỊCH SỬ CÂU HỎI</h1>
+        <table class="table table-borderless" style="margin-top: 40px;">
+            <thead class="table-success">
+                <tr>
+                    <th>Ngày</th>
+                    <th>Câu hỏi</th>
+                    <th>Câu trả lời</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Ngays.Count; i++)
+                {
+                    <tr>
+                        <td>@Ngays[i]</td>
+                        <td>@cauHois[i]</td>
+                        <td>@cauTraLois[i]</td>
+                    </tr>
+                }
+                
+
+            </tbody>
+        </table>
+    </div>
+</div>

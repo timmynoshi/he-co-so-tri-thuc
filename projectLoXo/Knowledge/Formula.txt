@@ -1,8 +1,10 @@
 begin_formula
 	w = sqrt(k / m) 
+	w = 2 * 3.14 / T
 	T = 2 * 3.14 / w
 	T = 2 * 3.14 * sqrt(m / k)
 	f1 = 1 / T
+	f1 = w / (2* 3.14)
 	F = -k * x
 	F = -k * delta_l
 	F = m * a
@@ -12,7 +14,8 @@ begin_formula
 	Wt = (1/2) * k * delta_l^2
 	Wt = (1/2) * k * x^2
 	k = 4 * 3.14^2 * m / T^2
-	g = 10
-        
+        T = sqrt(HeSo1*m1 + HeSo2*m2)
+	k1 = k * l / l1
+	k2 = k * l / l2
 	
 end_formula

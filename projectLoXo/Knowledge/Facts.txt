@@ -6,85 +6,137 @@ begin_facts
 		meaning: do cung
 		measurement: N/m
 	end_element
+
+	begin_element
+		symbol: k1
+		meaning: do cung vat 1
+		measurement: N/m
+	end_element
+
+	begin_element
+		symbol: k2
+		meaning: do cung vat 2
+		measurement: N/m
+	end_element
 	
 	begin_element
 		symbol: m
 		meaning: khoi luong
 		measurement: Kg
 	end_element
-	
-	
+		
 	begin_element
 		symbol: x
 		meaning: li do
 		measurement: m
 	end_element
 
-    begin_element
+    	begin_element
 		symbol: A
 		meaning: bien do dao dong
 		measurement: m
 	end_element
 
-    begin_element
+	begin_element
 		symbol: f1
 		meaning: tan so dao dong
 		measurement: Hz
 	end_element
 
-    begin_element
+	begin_element
 		symbol: T
 		meaning: chu ki dao dong
 		measurement: s
 	end_element
 
-    begin_element
+	begin_element
 		symbol: v
 		meaning: van toc
 		measurement: m/s^2
 	end_element
 
-    begin_element
+	begin_element
 		symbol: a
 		meaning: gia toc
 		measurement: m/s^2
 	end_element
 
-    begin_element
+	begin_element
 		symbol: F
 		meaning: luc tac dung
 		measurement: N
 	end_element
 
-    begin_element
+	begin_element
 		symbol: g
 		meaning: gia toc trong luc
 		measurement: m/s^2
 	end_element
 
-    begin_element
+	begin_element
 		symbol: w
 		meaning: omega
 		measurement: rad/s
 	end_element
 
-    begin_element
+	begin_element
 		symbol: Wd
 		meaning: dong nang
 		measurement: J
 	end_element
 
-    begin_element
+	begin_element
 		symbol: Wt
 		meaning: the nang
 		measurement: J
 	end_element
 
-    begin_element
+	begin_element
 		symbol: delta_l
 		meaning: su thay doi chieu dai cua lo xo
 		measurement: do m
 	end_element
 
+	begin_element
+		symbol: l
+		meaning: do dai lo xo
+		measurement: m
+	end_element
+
+	begin_element
+		symbol: l1
+		meaning: do dai lo xo 1
+		measurement: m
+	end_element
+
+	begin_element
+		symbol: l2
+		meaning: do dai lo xo 2
+		measurement: m
+	end_element
+
+	begin_element
+		symbol: m1
+		meaning: chu ky dao dong vat 1
+		measurement: s
+	end_element
+
+	begin_element
+		symbol: m2
+		meaning: chu ky dao dong vat 2
+		measurement: s
+	end_element
+
+	begin_element
+		symbol: HeSo1
+		meaning: he so 1
+		measurement: s
+	end_element
+
+	begin_element
+		symbol: HeSo2
+		meaning: he so 2
+		measurement: s
+	end_element
 
 end_facts

@@ -149,32 +149,27 @@
                 <form id="chat-form" method="post">
                     <div class="chatbox" id="chatbox">
                         <!-- Bot response will be displayed here -->
+                        @foreach (var entry in Model.TruyVanEntries)
+                        {
+                            <div style="text-align:right;display: flex;justify-content: right;" class="chat-message user">
 
-                        <div style="text-align:right;display: flex;justify-content: right;" class="chat-message user">
+                                <div style="text-align:left" class="message-content">
 
-                            <div style="text-align:left" class="message-content">
-
-<pre>
-Gia thuyet: I=2.4 , R = 5 , t = 300
-Ket luan: Q
-
-</pre>
+                                    <p>@Html.Raw(entry.TruyVanCauHoi.Replace("\n", "<br>"))</p>
+                                </div>
+                                <div><img src="~/images/lion.png" style="width: 50px;margin-left: 10px;"></div>
                             </div>
-                            <div><img src="~/images/lion.png" style="width: 50px;margin-left: 10px;"></div>
-                        </div>
+                            <div class="chat-message bot " style="text-align:right;display: flex;justify-content: left;">
+                                <div><img src="~/images/robot.png" style="width: 50px;margin-right: 10px;"></div>
+                                <div class="message-content">
+                                    <p>@Html.Raw(entry.TruyVanTraLoi)</p>
+                                </div>
+                            </div>
+                        }
+                        
 
                         <!-- User response will be displayed here -->
-                        <div class="chat-message bot " style="text-align:right;display: flex;justify-content: left;">
-                            <div><img src="~/images/robot.png" style="width: 50px;margin-right: 10px;"></div>
-                            <div class="message-content">
-<pre>
-Buoc : 1
-Từ tập yếu tố: R, I, t
-Ta ap dung cong thuc: Q = R* I2*t
-Ta suy ra duoc: Q = 8640.
-</pre>
-                            </div>
-                        </div>
+                        
 
                     </div>
                     <div class="form-group mt-4">
