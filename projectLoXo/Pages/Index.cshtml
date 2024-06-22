@@ -11,7 +11,7 @@
     <style>
         body {
             background-color: #fff;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Consolas';
             color: #333;
         }
 
@@ -144,54 +144,86 @@
 
 <body>
     <main>
-        <div class="container mt-5">
-            <div class="form-container">
-                <form id="chat-form" method="post">
-                    <div class="chatbox" id="chatbox">
-                        <!-- Bot response will be displayed here -->
-                        @foreach (var entry in Model.TruyVanEntries)
-                        {
-                            <div style="text-align:right;display: flex;justify-content: right;" class="chat-message user">
+        @if(User.Identity.Name!=null)
+        {
+            <div class="container mt-5">
+                <div class="form-container">
+                    <form id="chat-form" method="post">
+                        <div class="chatbox" id="chatbox">
+                            <!-- Bot response will be displayed here -->
+                            @foreach (var entry in Model.TruyVanEntries)
+                            {
+                                <div style="text-align:right;display: flex;justify-content: right;" class="chat-message user">
 
-                                <div style="text-align:left" class="message-content">
+                                    <div style="text-align:left" class="message-content">
 
-                                    <p>@Html.Raw(entry.TruyVanCauHoi.Replace("\n", "<br>"))</p>
+                                        <p>@Html.Raw(entry.TruyVanCauHoi.Replace("\n", "<br>"))</p>
+                                    </div>
+                                    <div><img src="~/images/lion.png" style="width: 50px;margin-left: 10px;"></div>
                                 </div>
-                                <div><img src="~/images/lion.png" style="width: 50px;margin-left: 10px;"></div>
-                            </div>
-                            <div class="chat-message bot " style="text-align:right;display: flex;justify-content: left;">
-                                <div><img src="~/images/robot.png" style="width: 50px;margin-right: 10px;"></div>
-                                <div class="message-content">
-                                    <p>@Html.Raw(entry.TruyVanTraLoi)</p>
+                                <div class="chat-message bot " style="text-align:right;display: flex;justify-content: left;">
+                                    <div><img src="~/images/robot.png" style="width: 50px;margin-right: 10px;"></div>
+                                    <div class="message-content">
+                                        <p>@Html.Raw(entry.TruyVanTraLoi)</p>
+                                    </div>
                                 </div>
-                            </div>
-                        }
-                        
+                            }
 
-                        <!-- User response will be displayed here -->
-                        
 
-                    </div>
-                    <div class="form-group mt-4">
-                        <div class="row chat-input">
-                            <div class="col-md-12">
-                                <input data-intro="Điền giả thiết của bài toán vào đây!" id="user-inputGT" name="GIATHIET_H" class="form-control" type="text" required placeholder="Nhập vào giả thiết">
-                            </div>
-                            <div class="col-md-11">
-                                <input data-intro="Điền kết luận mà bạn muốn tính vào đây!" id="user-inputKL" name="KETLUAN_G" class="form-control" type="text" required placeholder="Nhập vào kết luận" style="margin-top: 12px;">
-                            </div>
-                            <div class="col-md-1" style="display: flex;justify-content: right;margin-top: 14px;">
-                                <button data-intro="Click vào đây để nhận kết quả giải bài tập" id="send-button" class="btn btn-success" type="submit" style="width: 100px;">Gửi</button>
+                            <!-- User response will be displayed here -->
+
+
+                        </div>
+                        <div class="form-group mt-4">
+                            <div class="row chat-input">
+                                <div class="col-md-12">
+                                    <input data-intro="Điền giả thiết của bài toán vào đây!" id="user-inputGT" name="GIATHIET_H" class="form-control" type="text" required placeholder="Nhập vào giả thiết">
+                                </div>
+                                <div class="col-md-11">
+                                    <input data-intro="Điền kết luận mà bạn muốn tính vào đây!" id="user-inputKL" name="KETLUAN_G" class="form-control" type="text" required placeholder="Nhập vào kết luận" style="margin-top: 12px;">
+                                </div>
+                                <div class="col-md-1" style="display: flex;justify-content: right;margin-top: 14px;">
+                                    <button data-intro="Click vào đây để nhận kết quả giải bài tập" id="send-button" class="btn btn-success" type="submit" style="width: 100px;">Gửi</button>
+                                </div>
+
                             </div>
 
                         </div>
 
-                    </div>
+                    </form>
 
-                </form>
-
+                </div>
             </div>
-        </div>
+        } else
+        {
+            <div class="container mt-5">
+                <div class="form-container">
+                    <form id="chat-form" method="post">
+                        <div class="chatbox" id="chatbox">
+                            <!-- Bot response will be displayed here -->
+                            
+                                
+                                <div class="chat-message bot " style="text-align:right;display: flex;justify-content: left;">
+                                    <div><img src="~/images/robot.png" style="width: 50px;margin-right: 10px;"></div>
+                                    <div class="message-content">
+                                        <p>Vui lòng đăng nhập để hỏi tôi!</p>
+                                    </div>
+                                </div>
+                            
+
+
+                            <!-- User response will be displayed here -->
+
+
+                        </div>
+                        
+
+                    </form>
+
+                </div>
+            </div>
+        }
+
     </main>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

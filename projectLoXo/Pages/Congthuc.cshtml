@@ -1,0 +1,63 @@
+﻿@page
+@model projectLoXo.Pages.CongthucModel
+@{
+}
+
+<div class="container ">
+    <div class="container ">
+        <h1 align="center" style="margin-top: 40px;">TÓM TẮT CÔNG THỨC</h1>
+    </div>
+
+
+    <table class="table table-bordered table-striped" style="margin-top: 40px;">
+        <thead class="table-light ">
+            <tr>
+                <th></th>
+                <th style="text-align: center;">Con lắc lò xo nằm ngang</th>
+                <th style="text-align: center;">Con lắc lò xo thẳng đứng</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td style="text-align: center;padding-top: 50px;"><img src="/images/loxongang.png" style="width: 300px;"></td>
+                <td style="text-align: center;"><img src="/images/loxodung.png" style="width: 280px;"></td>
+            </tr>
+
+            <tr>
+                <td style="text-align: center;font-weight: 500;">Phương trình dao động</td>
+                <td colspan="2">
+                    <p>Li độ: x = Acos(ωt + φ)</p>
+                    <p>Vận tốc: v = x' = - Aωsin(ωt + φ) = Aωcos(ωt + φ + π/2)</p>
+                    <p>Gia tốc: a = v' = -ω<sup>2</sup>Acos(ωt + φ) = -ω<sup>2</sup>x = ω<sup>2</sup>Acos(ωt + φ + π)</p>
+
+            </tr>
+            <tr>
+                <td style="text-align: center;font-weight: 500;">Độ dãn tại vị trí cân bằng</td>
+                <td>
+                    <p style="text-align: center;">Δl = 0</p>
+                </td>
+                <td>
+                    <p style="text-align: center;">Δl = mg/k</p>
+                </td>
+
+            </tr>
+            <tr>
+                <td style="text-align: center;font-weight: 500;">Chu kì, tần số, tần số góc</td>
+                <td>
+                    <p>ω = √k/m , T = 2π√m/k</p>
+                    <p>f = ω/2π = 1/2π√k/m</p>
+
+                </td>
+                <td>
+                    <p>ω = √k/m = √g/Δl</p>
+                    <p>T = 2π√m/k = 2π√Δl/g</p>
+                    <p>f = ω/2π = 1/2π√k/m = 1/2π√g/Δl</p>
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>

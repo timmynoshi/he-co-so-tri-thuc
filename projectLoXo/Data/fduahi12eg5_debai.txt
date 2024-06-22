@@ -10,5 +10,5 @@ Init():
 Initialize(f1,f2,f3): 
 Sol:=FindSolution(H, G): 
 Sol:=ReduceSolultionSteps(Sol, G): 
-duongdan:="D:/CacMonHoc/CoSoTriThucvaUngDung/projectLoXo/projectLoXo/Solved/mndkj5miewu_ketqua.html": 
+duongdan:="D:/CacMonHoc/CoSoTriThucvaUngDung/projectLoXo/projectLoXo/Solved/fduahi12eg5_ketqua.html": 
 OutPutSolution(Sol, duongdan): 
