@@ -24,7 +24,11 @@
                     <tr>
                         <td width="200px">@Ngays[i]</td>
                         <td width="400px">@cauHois[i]</td>
-                        <td>@cauTraLois[i].Replace("<br>", "\n")</td>
+                        <td>
+                            <p>
+                                @cauTraLois[i].Replace("<br>", "\n")
+                            </p>
+                        </td>
                     </tr>
                 }
                 

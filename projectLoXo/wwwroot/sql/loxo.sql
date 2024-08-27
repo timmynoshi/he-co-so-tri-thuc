@@ -26,7 +26,7 @@ INSERT INTO NguoiDung VALUES (N'ntt',N'123', N'Nguyễn Thanh Tín', N'Điện B
 
 CREATE TABLE LichSu ( Id INT IDENTITY(1,1) PRIMARY KEY,
 					  TenDangNhap NVARCHAR(50),
-					  Ngay DATE,
+					  Ngay DATETIME2,
 					  CauHoi NVARCHAR(MAX),
 					  CauTraLoi NVARCHAR(MAX),
 					  FOREIGN KEY (TenDangNhap) REFERENCES NguoiDung(TenDangNhap)
